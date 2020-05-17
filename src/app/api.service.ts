@@ -7,8 +7,8 @@ import {catchError} from 'rxjs/operators';
 })
 export class ApiService {
 
-  private SERVER_URL = 'http://localhost:8080/findAll';
-  private SERVER_POST_URL = 'http://localhost:8080/adoption/createAdoption';
+  private SERVER_URL = 'http://localhost:8080/findAllA/';
+  private SERVER_POST_URL = 'http://localhost:8080/adoption/createAdoption/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,7 +17,7 @@ export class ApiService {
   }
 
   adoptAnimal(id) {
-    return this.httpClient.post(this.SERVER_POST_URL + '?userId=1' + '&idAnimal=' + id, null);
+    return this.httpClient.post(this.SERVER_POST_URL + '?idUser=1' + '&idAnimal=' + id, null);
   }
 
 }
