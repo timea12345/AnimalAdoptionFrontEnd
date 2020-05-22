@@ -1,0 +1,46 @@
+<mat-card style="margin-top:10px">
+<form [formGroup]="animalForm" (ngSubmit)="addAnimal()" method="post" target="_blank">
+  <p>Please complete the form!</p>
+  <br>
+  <label for="race">Race</label><br>
+  <input type="text" id="race" name="race" formControlName="race"><br><br>
+  <label for="gender">Gender</label>
+  <input type="text" id="gender" name="gender" formControlName="sex"> <br><br>
+  <label>Age</label> <br>
+  <input type="text" id="age" name="age" formControlName="age"> <br><br>
+  <label>Description</label> <br>
+  <input type="text" id="description" name="description" formControlName="description"> <br><br>
+
+  <button type="submit">Submit</button>
+
+  <p> {{animalForm.value | json}} </p>
+<!--  todo photo, shelter and user-->
+</form>
+</mat-card>
+
+
+<!--<mat-card style="margin-top:10px">-->
+<!--  <form method="post" target="_blank" *ngModel="let animals">-->
+<!--    <p>Please complete the form!</p>-->
+<!--    <br>-->
+<!--    <label for="race">Race</label><br>-->
+<!--    <<input type="text" id="race" name="race" value="race" *ngModel="animals.race">-->
+<!--    <label>Gender: </label><br>-->
+<!--    <label for="male">Male</label>-->
+<!--    <input type="radio" id="male" name="gender" value="gender" *ngModel="animals.gender">-->
+<!--    <label for="female">Female</label>-->
+<!--    <input type="radio" id="female" name="gender" *ngModel="animals.gender"> <br><br>-->
+<!--    <label>Age</label> <br>-->
+<!--    <input type="text" id="age" name="age" value="age" *ngModel="animals.age"> <br><br>-->
+<!--    <label>Description</label> <br>-->
+<!--    <input type="text" id="description" name="description" value="description" *ngModel="animals.description"> <br><br>-->
+
+<!--    <button type="submit"-->
+<!--            (click)="addAnimal(8, animals.race, animals.age, animals.gender, animals.description)"-->
+<!--    >Submit</button>-->
+<!--    &lt;!&ndash;  todo photo, shelter choosing and user choosing&ndash;&gt;-->
+<!--  </form>-->
+<!--</mat-card>-->
+
+
+

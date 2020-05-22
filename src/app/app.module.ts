@@ -11,23 +11,30 @@ import { MatToolbarModule } from '@angular/material';
 import { MatButtonModule } from '@angular/material';
 import {MatCardModule} from '@angular/material';
 import {MatProgressSpinnerModule} from '@angular/material';
+import { FormComponent } from './form/form.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { UpdateAnimalComponent } from './update-animal/update-animal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    FormComponent,
+    UpdateAnimalComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatProgressSpinnerModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatCardModule,
+        MatProgressSpinnerModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

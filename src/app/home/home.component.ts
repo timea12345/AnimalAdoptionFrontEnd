@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
-import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -22,5 +21,13 @@ export class HomeComponent implements OnInit {
 
   adoptAnimal(id) {
     this.apiService.adoptAnimal(id).subscribe();
+  }
+
+  deleteAnimal(id) {
+    this.apiService.deleteAnimal(id).subscribe();
+  }
+
+  updateAnimal(animal) {
+    this.apiService.updateAnimal(animal).subscribe();
   }
 }
