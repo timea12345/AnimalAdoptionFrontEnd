@@ -14,6 +14,8 @@ import {MatProgressSpinnerModule} from '@angular/material';
 import { FormComponent } from './form/form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UpdateAnimalComponent } from './update-animal/update-animal.component';
+import { AddShelterComponent } from './add-shelter/add-shelter.component';
+import { ShelterComponent } from './shelter/shelter.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { UpdateAnimalComponent } from './update-animal/update-animal.component';
     HomeComponent,
     AboutComponent,
     FormComponent,
-    UpdateAnimalComponent
+    UpdateAnimalComponent,
+    AddShelterComponent,
+    ShelterComponent
   ],
     imports: [
         BrowserModule,

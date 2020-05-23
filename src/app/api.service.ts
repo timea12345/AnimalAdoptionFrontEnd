@@ -14,8 +14,10 @@ export class ApiService {
   private SERVER_FIND_URL = 'http://localhost:8080/animal/findById';
   private SERVER_POST_URL = 'http://localhost:8080/adoption/createAdoption/';
   private SERVER_ADD_ANIMAL_URL = 'http://localhost:8080/animal/addAnimal';
-  private SERVER_DELETE_ANIMAL_URL = 'http://localhost:8080/animal/delete';
+  private SERVER_DELETE_ANIMAL_URL = 'http://localhost:8080/animal/delete/';
   private SERVER_UPDATE_URL = 'http://localhost:8080/animal/update/';
+  private SERVER_ADD_SHELTER_URL = 'http://localhost:8080/shelter/addShelter/';
+  private SERVER_SHELTERS_URL = 'http://localhost:8080/shelter/list/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -38,11 +40,22 @@ export class ApiService {
     (this.SERVER_ADD_ANIMAL_URL, body, httpOptions);
   }
 
+  addShelter(shelter) {
+    const body = JSON.stringify(shelter);
+    return this.httpClient.post
+    (this.SERVER_ADD_SHELTER_URL, body, httpOptions);
+  }
+
   deleteAnimal(id) {
-    return this.httpClient.delete(this.SERVER_DELETE_ANIMAL_URL + id);
+    return this.httpClient.delete(this.SERVER_DELETE_ANIMAL_URL + '?id=' + id, );
   }
 
   updateAnimal(animal) {
-    return this.httpClient.put(this.SERVER_UPDATE_URL + animal.id, animal);
+    const body = JSON.stringify(animal)
+    return this.httpClient.put(this.SERVER_UPDATE_URL, body, httpOptions);
+  }
+
+  getShelters() {
+    return this.httpClient.get(this.SERVER_SHELTERS_URL);
   }
 }

@@ -15,6 +15,7 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
     this.animalForm = this.builder.group({
+      id: [''],
       race: [''],
       sex: [''],
       age: [''],

@@ -1,0 +1,12 @@
+<mat-card style="margin-top:10px">
+  <form [formGroup]="shelter" (ngSubmit)="addShelter()" method="post" target="_blank">
+    <p>Please complete the form!</p>
+    <br>
+    <label for="name">Name</label><br>
+    <input type="text" id="name" name="name" formControlName="name"><br><br>
+    <label for="address">Address</label><br>
+    <input type="text" id="address" name="address" formControlName="address"> <br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</mat-card>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../api.service';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-update-animal',
@@ -8,15 +9,21 @@ import {ApiService} from '../api.service';
 })
 export class UpdateAnimalComponent implements OnInit {
 
-  constructor(private apiService: ApiService) { }
+  animalUp: FormGroup;
+
+
+  constructor(private apiService: ApiService, private builder: FormBuilder) { }
 
   ngOnInit() {
+    this.animalUp = this.builder.group({
+      race: [''],
+      sex: [''],
+      age: [''],
+      description: ['']
+    });
   }
 
-  // updateAnimal(id, race, gender, age, description) {
-  //   this.apiService.updateAnimal(id, race, gender, age, description).subscribe();
-  // }
-  // updateAnimal(animal) {
-  //   return this.httpClient.put(this.SERVER_UPDATE_URL + animal.id, animal);
-  // }
+  updateAnimal() {
+    this.apiService.updateAnimal(this.animalUp.value).subscribe();
+  }
 }

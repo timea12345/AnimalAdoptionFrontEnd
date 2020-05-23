@@ -1,0 +1,19 @@
+<div style="padding: 50px;">
+  <mat-spinner *ngIf="shelters.length === 0">List is empty </mat-spinner>
+  <mat-card *ngFor="let shelter of shelters" style="margin-top:10px;">
+    <mat-card-header>
+      <!--      <mat-card-title> {{animal.race}} </mat-card-title>-->
+      <mat-card-subtitle>Name: {{shelter.name}}<br>Address: {{shelter.address}}
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+<!--      <p>-->
+<!--        {{}}-->
+<!--      </p>-->
+<!--      <img style="height:40%; width: 40%;" src="{{ shelter.photo }}" />-->
+    </mat-card-content>
+    <mat-card-actions>
+<!--      <button mat-button (click) = "removeShelter(shelter.id)"> Remove </button>-->
+    </mat-card-actions>
+  </mat-card>
+</div>
